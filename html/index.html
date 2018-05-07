@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<style>
+    .customDiv {
+        margin:10px auto;
+    }
+
+    .customPadding {
+        padding:20px;
+    }
+
+    .grad li, .grad h2, .grad h5 {
+        color:#990066;
+    }
+
+    .grad h1, .grad a, .tab button{
+        color:#000000;
+    }
+
+    .grad a:hover {
+        color:aqua;
+    }
+
+    .tab {
+        padding-top:70px;
+    }
+
+    .tab button{
+        display:block;
+        width:150px;
+        height:50px;
+        font-size: 24px;
+        border-radius:5px;
+        border:none;
+        background-color:rgba(0,0,0,0)
+    }
+
+    .tab button:hover,.tab button.select{
+        border:1px solid #cccccc;
+    }
+
+    h2 {
+        letter-spacing:5px;
+    }
+
+    .tabMenu li {
+        font-size:23px;
+    }
+
+    .mgt50 {
+        margin-top:50px;
+    }
+
+    .mgt25 {
+        margin-top:25px;
+    }
+
+    .text-center {
+        margin-top:50px;
+    }
+</style>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<title>minecraft联机指南</title>
+
+</head>
+	
+<body class = "background">
+    <div class="container">
+    <div class="grad">
+    <h1 class="text-center">minecraft 1.7.10 神秘时代 </h1>
+            <div class="col-xs-12 tabMenu">
+                <div class="col-xs-12 customPadding">
+                    <h2 class="text-center"> 安装步骤</h2>
+                    <ul class="mgt25">
+                        <li>
+                            下载游戏启动器，解压
+                        </li>
+                        <li>
+                            运行HMCL启动器，如果提示没有java，从"下载地址"中下载java1.8安装
+                        </li>
+                        <li>
+                            如果已经有版本，选择游戏设置->新建->设置新的空配置，然后按提示下载1.7.10版本游戏
+                        </li>
+                        <li>
+                            游戏设置->自动安装->Forge->选择第一个安装
+                        </li>
+                        <li>
+                            下载地址->mod包下载，下载好后解压。之后选择启动器->游戏设置->mod管理 将所有mod拖到里面
+                        </li>
+
+                        <li>
+                            设置用户名，版本选择1.7.10-Forge, 启动游戏。
+                        </li>
+                        <li>
+                            option language 修改语言为中文。视频设置->调整亮度为50
+                        </li>
+                        <li>
+                            选择多人游戏，设置任意服务器名称，地址为 60.205.229.20
+                        </li>
+                        <li>
+                            启动游戏，Win+Space 设置输入法为英文, /register 设置密码
+                        </li>
+                    </ul>
+
+                    <h2 class="text-center">
+                        常用命令
+                    </h2>
+                    <ul class="mgt25">
+                        <li>
+                            /home 回家
+                        </li>
+
+                        <li> 
+                            /back 返回之前地点
+                        </li>
+                    </ul>
+
+                </div>
+                <h2 class="text-center">
+                        下载地址
+                    </h2>
+                    <ul class="mgt25">
+
+                        <li>
+                            <a href="http://60.205.229.20/download/HMCL-2.7.8.33.zip">HMCL启动器，windows版</a>
+                        </li>
+
+                        <li>
+                            <a href="http://60.205.229.20/download/HMCL-2.7.8.33.jar">HMCL启动器，linux/mac版</a>
+                        </li>
+
+                        <li>
+                            <a href="http://60.205.229.20/download/jdk1.8.exe">windows java1.8环境</a>
+                        </li>
+                        <li>
+                            <a href="http://60.205.229.20/download/mods.zip">mod包下载</a>
+                        </li>
+                    </ul>
+
+            </div>
+        <div class="col-xs-1 col-lg-2"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    $(function () {
+        $(".tab button").click(function () {
+            $(this).addClass("selected")
+                .siblings().removeClass("selected");
+            var index = $(".tab button").index(this);
+            $(".tabMenu>div:eq(" + index + ")").show()
+                .siblings().hide();
+            if (index == 2) {
+                $(".carousel-control").css("line-height", $(".carousel-control").height() + "px");
+                $(".carousel-control").css("font-size", "100px");
+            }
+        });
+    });
+</script>
